@@ -35,4 +35,7 @@ def Pdm(arbre):
 def Jour(arbre):
     jour = arbre.find("h1")
     jour = str(jour)
-    return jour[20:]
+    jours = []
+    for i in range(19):
+        jours.append(jour[20:-17])
+    return jours
