@@ -29,7 +29,7 @@ def Pdm(arbre):
     for i in range(len(pdms)):
         b = str(pdms[i])
         pdm.append(b[27:31])
-    return pdm
+    return pdm[0:19]
 
 'Fonction qui récupère le jour'
 def Jour(arbre):

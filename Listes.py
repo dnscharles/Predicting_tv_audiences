@@ -1,19 +1,19 @@
 'Vecteur des dates'
 def date(j,m,a):
     Dates = []
-    for k in range(j):
-        for j in range(m):
-            for i in range(a):
+    for k in range(a):
+        for l in range(m):
+            for i in range(j):
                 'Jour'
-                if i < 10:
+                if i < 9:
                     JJ = "0" + str(i+1)
                 else:
                     JJ = str(i+1)
                 'Mois'
-                if j < 10:
-                    MM = "0" + str(j+1)
+                if l < 9:
+                    MM = "0" + str(l+1)
                 else:
-                    MM = str(j+1)
+                    MM = str(l+1)
                 'Année'
                 AAAA = k + 2014
                 AAAA = str(AAAA)
