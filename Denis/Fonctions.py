@@ -28,7 +28,9 @@ def Pdm(arbre):
     pdms = arbre.findAll("em", {"style" : "display: none;"})
     for i in range(len(pdms)):
         b = str(pdms[i])
-        pdm.append(b[27:31])
+        b = b[27:31]
+        b = b.split("%")[0]
+        pdm.append(b)
     return pdm[0:19]
 
 'Fonction qui récupère le jour'
