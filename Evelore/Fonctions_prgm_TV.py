@@ -37,6 +37,8 @@ def heures1(arbre):
     for i in range(0,50,2):
         result = re.findall("b t16\">(.*)</span> ",str(noeud[i]))
         result = str(result)[2:7]
+        if result == "":
+            result = "NA"
         heure.append(result)
     return heure
 
@@ -62,7 +64,11 @@ def titres1(arbre):
         if noeud2 == []:
             noeud2 = arbre2.find_all("a",{"class":"titre b"})
         result = re.findall(">(.*)<", str(noeud2))
-        result = str(result)[2:-2]
+        result = str(result).replace("&amp;", "&")
+        result = str(result).replace(";", "")
+        result = result[2:-2]
+        if result == "":
+            result = "NA"
         titre.append(result)
     return titre
 
@@ -76,7 +82,11 @@ def titres2(arbre):
         if noeud2 == []:
             noeud2 = arbre2.find_all("a",{"class":"titre b"})
         result = re.findall(">(.*)<", str(noeud2))
-        result = str(result)[2:-2]
+        result = str(result).replace("&amp;", "&")
+        result = str(result).replace(";", "")
+        result = result[2:-2]
+        if result == "":
+            result = "NA"
         titre.append(result)
     return titre
 
@@ -87,6 +97,8 @@ def type_prgm1(arbre):
     for i in range(0,50,2):
         result = re.findall("cat-(.{0,30})",str(noeud[i]))
         result = str(result).split('"')[0]
+        if result == "[]":
+            result = "NA"
         typ.append(result)
     return typ
 
@@ -110,6 +122,8 @@ def temps_prgm1(arbre):
         result = re.findall("<br/>\((.{0,6})",str(noeud[i]))
         result = str(result)[2:8]
         result = result.split(')')[0]
+        if result == "":
+            result = "NA"
         temps.append(result)
     return temps
 
@@ -136,6 +150,8 @@ def nbre_ep1(arbre):
             result = result[0]
         else:
             result = result
+        if len(str(result)) > 4:
+            result = str(result)[1:-1]
         if result == []:
             result = "NA"
         nbre.append(result)
@@ -151,6 +167,8 @@ def nbre_ep2(arbre):
             result = result[0]
         else:
             result = result
+        if len(str(result)) > 4:
+            result = str(result)[1:-1]
         if result == []:
             result = "NA"
         nbre.append(result)
