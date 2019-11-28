@@ -9,7 +9,7 @@ def tree(chemin):
     arbre = bs4.BeautifulSoup(texte, "html.parser")
     return arbre
 
-'Date du programme TV'
+'Jour du programme TV'
 def jour(arbre):
     jour = arbre.findAll("h1")
     jour = re.findall("TV (.*) \(",str(jour))
@@ -17,6 +17,22 @@ def jour(arbre):
     for i in range(25):
         result = jour
         result = str(jour)[2:-2]
+        result = result.split(" ")[0]
+        date.append(result)
+    return date
+
+'Date du programme'
+def date(arbre):
+    jour = arbre.findAll("h1")
+    jour = re.findall("TV (.*) \(",str(jour))
+    date = []
+    for i in range(25):
+        result = jour
+        result = str(jour)[2:-2]
+        if result[0] == "d":
+            result = result.split("che ")[1]
+        else:
+            result = result.split("di ")[1]
         date.append(result)
     return date
 
