@@ -151,7 +151,7 @@ def nbre_ep1(arbre):
         else:
             result = result
         if len(str(result)) > 4:
-            result = str(result)[1:-1]
+            result = str(result)[2:-2]
         if result == []:
             result = "NA"
         nbre.append(result)
@@ -168,7 +168,7 @@ def nbre_ep2(arbre):
         else:
             result = result
         if len(str(result)) > 4:
-            result = str(result)[1:-1]
+            result = str(result)[2:-2]
         if result == []:
             result = "NA"
         nbre.append(result)
