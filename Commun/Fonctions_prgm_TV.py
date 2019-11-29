@@ -33,6 +33,9 @@ def date(arbre):
             result = result.split("che ")[1]
         else:
             result = result.split("di ")[1]
+        for k in range(1,10):
+            if result[0:2] == str(k) + " ":
+                result = str(0) + str(result)
         date.append(result)
     return date
 
