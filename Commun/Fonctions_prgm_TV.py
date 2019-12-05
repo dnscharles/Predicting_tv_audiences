@@ -133,27 +133,25 @@ def type_prgm2(arbre):
         typ.append(result)
     return typ
 
-'Durée du premier programme'
+'Durée du premier programme en minutes'
 def temps_prgm1(arbre):
     noeud = arbre.find_all("div",{"class":"b_d prog1"})
     temps = []
     for i in range(0,50,2):
         result = re.findall("<br/>\((.{0,6})",str(noeud[i]))
-        result = str(result)[2:8]
-        result = result.split(')')[0]
+        result = str(result)[2:5]
         if result == "":
             result = "NA"
         temps.append(result)
     return temps
 
-'Durée du deuxième programme'
+'Durée du deuxième programme en minutes'
 def temps_prgm2(arbre):
     noeud = arbre.find_all("div",{"class":"b_d prog1"})
     temps = []
     for i in range(1,50,2):
         result = re.findall("<br/>\((.{0,6})",str(noeud[i]))
-        result = str(result)[2:8]
-        result = result.split(')')[0]
+        result = str(result)[2:5]
         if result == "":
             result = "NA"
         temps.append(result)
@@ -172,7 +170,7 @@ def nbre_ep1(arbre):
         if len(str(result)) > 4:
             result = str(result)[2:-2]
         if result == []:
-            result = "NA"
+            result = "0"
         nbre.append(result)
     return nbre 
 
@@ -189,7 +187,7 @@ def nbre_ep2(arbre):
         if len(str(result)) > 4:
             result = str(result)[2:-2]
         if result == []:
-            result = "NA"
+            result = "0"
         nbre.append(result)
     return nbre 
 
