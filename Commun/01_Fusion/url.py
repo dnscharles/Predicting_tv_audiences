@@ -1,7 +1,7 @@
 import datetime
 
 'Boucle créant la date pour url'
-'a est l année jusqu a laquelle on veut récupérer les dates'
+'a est l année jusqu à laquelle on veut récupérer les dates'
 def dates(a):
     Date = []
     for i in range(2014,a+1):
@@ -18,7 +18,7 @@ def dates(a):
             for k in range(1,l):
                 date = str(datetime.date(i, j, k))
                 Date.append(date)       
-    return Date[280:-41]
+    return Date[280:-21]
 
 'Génération du chemin'
 def chemin(Dates):

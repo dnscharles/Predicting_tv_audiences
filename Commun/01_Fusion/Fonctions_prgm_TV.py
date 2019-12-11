@@ -206,7 +206,7 @@ def ages1(arbre):
         elif result == ['5']:
             result = '-18 ans'
         elif result == []:
-            result = "NA"
+            result = "Tout public"
         age.append(result)
     return age
 
@@ -225,6 +225,6 @@ def ages2(arbre):
         elif result == ['5']:
             result = '-18 ans'
         elif result == []:
-            result = "NA"
+            result = "Tout public"
         age.append(result)
     return age
