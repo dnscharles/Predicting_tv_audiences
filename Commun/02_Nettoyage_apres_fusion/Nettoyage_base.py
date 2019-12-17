@@ -34,6 +34,8 @@ def Prog(string):
 'Gestion duree programme'
 def Duree_prog(string):
     parts = string.split(' ')
+    if parts[0] == 'Suite':
+        return 0
     if string == "nan":
         return np.nan
     else:
@@ -43,9 +45,15 @@ def Duree_prog(string):
 def Pdm(string):
     if string == "nan":
         return np.nan
-    else:
-        P = string.replace(",",".")
-        return P
+    if string == "1/9":
+        return np.nan
+    if len(string)>2:
+        if string[2] or string[1] == ";":
+            string = string.replace(";",".")
+        if string[2] or string[1] == ",":
+            string = string.replace(",",".")
+    parts = string.split('.')
+    return parts[0]
 
 def nettoyage(data):
     'Gestion unnamed'
