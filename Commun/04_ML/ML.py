@@ -10,6 +10,12 @@ from sklearn.preprocessing import StandardScaler,MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier as RFC
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier as KNN
+from sklearn.gaussian_process import GaussianProcessClassifier as GPC
+from sklearn.gaussian_process.kernels import RBF
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+plt.rc('figure',figsize=(11,5))
 
 def recodage(data):
     ohe = OneHotEncoder()
@@ -51,3 +57,16 @@ def normalisation(X_train,X_test):
     X_test_ess = ss.fit_transform(X_test)
     X_test_emm = mm.fit_transform(X_test)
     return X_train_ess, X_train_emm, X_test_ess, X_test_emm
+
+def rpz_resultat(predicteur,X_test,y_test):
+    table_predite = predicteur.predict(X_test)
+    table_predite = table_predite.T
+    table_predite = pd.DataFrame(table_predite)
+    table_predite = table_predite.astype(np.str)
+    table_predite['Types'] = y_test
+    table_predite['Types prédits'] = table_predite[0]
+    table_predite = table_predite.drop(table_predite.columns[0],axis='columns')
+    heat = sns.heatmap(pd.crosstab(table_predite['Types'], table_predite['Types prédits']),
+            cmap="YlGnBu", annot=True,fmt='',square=True, cbar=False)
+    return heat
+    
