@@ -33,14 +33,18 @@ def recodage(data):
     data['Type_prgm2'] = le.fit_transform(data["Type_prgm2"].astype(str))
 
     reste = data[["Jour","Week end","Mois","Annee","Heure_prgm1","Duree_prgm1","Duree_prgm2", "Nbre_episodes_prgm1","Age_conseille_prgm1",
-              "Heure_prgm2", "Nbre_episodes_prgm2","Age_conseille_prgm2","Part_de_marche",
-             "Type_prgm2"]].values
+              "Heure_prgm2", "Nbre_episodes_prgm2","Age_conseille_prgm2","Part_de_marche"]].values
     chaine_ohe = ohe.fit_transform(data["Chaine"]
                                   .astype(str)
                                   .values
                                   .reshape(-1, 1)
                                  )
-    X = np.concatenate((chaine_ohe.toarray(),reste), axis=1)
+    type_prgm2_ohe = ohe.fit_transform(data["Type_prgm2"]
+                                  .astype(str)
+                                  .values
+                                  .reshape(-1, 1)
+                                 )
+    X = np.concatenate((chaine_ohe.toarray(),type_prgm2_ohe.toarray(),reste), axis=1)
     y = data[['Type_prgm1']].values
     return X,y
 
