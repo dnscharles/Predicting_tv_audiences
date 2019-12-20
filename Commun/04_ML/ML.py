@@ -10,6 +10,8 @@ from sklearn.preprocessing import StandardScaler,MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier as RFC
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier as KNN
+from sklearn.gaussian_process import GaussianProcessClassifier as GPC
+from sklearn.gaussian_process.kernels import RBF
 
 def recodage(data):
     ohe = OneHotEncoder()
