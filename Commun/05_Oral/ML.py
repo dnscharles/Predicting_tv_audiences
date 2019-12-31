@@ -50,7 +50,7 @@ def recodage(data):
 
 def split(X,y,n=0.9):
     X_train, X_test, y_train, y_test = train_test_split(X, y,
-                                                   test_size=0.9)
+                                                   test_size=n)
     return X_train, X_test, y_train, y_test
 
 def normalisation(X_train,X_test):
