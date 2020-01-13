@@ -1,17 +1,4 @@
 # Dossier_ML
-Dossier dans le cadre du cours de Machine Learning
+Dossier dans le cadre du cours de Machine Learning. L'**objectif** est de créer un modèle qui prédit les `types de programmes` diffusés à la télévision le soir. 
 
-## Ce qui a été fait:
-- Récupération des logos
-- Récupération des parts de marché
-- Récupération de la date
-- Génération des URLs à chercher
-- Mise sous forme de fonctions avec des fichiers .py
-- Gestion des dates erronées
-- Boucle qui va chercher toutes les dates
-- Mise sous forme d'un Data Frame
-
-## Ce qui reste à faire (entre autre) :
-- Variable part de marché à améliorer
-- Fusionner les deux Data Frames
-- Commencer l'analyse
+Dans le fichier "05_Oral", se trouve l'explication de chaque étape.
