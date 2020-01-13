@@ -1,17 +1,6 @@
 # Dossier_ML
-Dossier dans le cadre du cours de Machine Learning
+Dossier dans le cadre du cours de Machine Learning du Master 2 Economiste d'entreprise (Tours). Dispensé par M. Vincent Perrollaz.
 
-## Ce qui a été fait:
-- Récupération des logos
-- Récupération des parts de marché
-- Récupération de la date
-- Génération des URLs à chercher
-- Mise sous forme de fonctions avec des fichiers .py
-- Gestion des dates erronées
-- Boucle qui va chercher toutes les dates
-- Mise sous forme d'un Data Frame
+L'**objectif** est de créer un modèle qui prédit les `types de programmes` diffusés à la télévision le soir. Pour cela, des données ont été scrappées sur deux sites Internet.
 
-## Ce qui reste à faire (entre autre) :
-- Variable part de marché à améliorer
-- Fusionner les deux Data Frames
-- Commencer l'analyse
+Dans le fichier *Commun\05_Oral* se trouve l'explication et les codes de chaque étape.
